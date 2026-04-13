@@ -12,24 +12,7 @@ This project simulates high-stakes environments such as legal, medical, and fore
 
 ## 🏗️ Architecture
 
-User uploads file
-│
-▼
-Amazon S3 (project-aegis-bucket)
-│
-▼
-S3 Event Trigger
-│
-▼
-AWS Lambda (Hash Function)
-│
-┌────┴─────────────┐
-▼ ▼
-DynamoDB SNS Topic
-(Store hash) (Send alert)
-│ │
-▼ ▼
-Compare hashes Email Notification
+![Diagram](screenshotsarchitecture-diagram.png)
 
 ---
 
@@ -137,13 +120,14 @@ This policy allows Lambda to:
 ## 📸 Screenshots
 
 ### S3 Upload Trigger
-![S3]()
+![S3](screenshotss3-upload.png)
 
 ### DynamoDB Records
-![DynamoDB]()
+![DynamoDB](screenshotsdynamodb.png)
 
 ### CloudWatch Logs
-![Logs]()
+![Logs](Screenshotwatchlogs1.png)
+![Logs](Screenshotwatchlogs.png)
 
 ### SNS Alert Email
-![SNS]()
+![SNS](screenshotssnsalert.png)
