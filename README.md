@@ -117,9 +117,6 @@ This policy allows Lambda to:
 - Store hashes in DynamoDB
 - Send alerts via SNS
 
-### table of roles used by lambda
-![roles](screenshotstableofallrolesused.png)
-
 ## 📸 Screenshots
 
 ### S3 Upload Trigger
