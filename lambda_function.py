@@ -38,7 +38,7 @@ def lambda_handler(event, context):
 
     # 🚨 Compare hashes
     if items:
-        last_hash = items[-1]['hash']
+      last_hash = sorted(items, key=lambda x: x['timestamp'])[-1]['hash']
 
         if last_hash != file_hash:
             print("⚠️ Possible tampering detected!")
