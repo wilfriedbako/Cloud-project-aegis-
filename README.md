@@ -137,14 +137,13 @@ This policy allows Lambda to:
 ## 📸 Screenshots
 
 ### S3 Upload Trigger
-![S3](screenshots/s3-upload.png)
+![S3]()
 
 ### DynamoDB Records
-![DynamoDB](screenshots/dynamodb.png)
+![DynamoDB]()
 
 ### CloudWatch Logs
-![Logs](screenshots/cloudwatch.png)
+![Logs]()
 
 ### SNS Alert Email
-![SNS](screenshots/sns-alert.png)<img width="1536" height="1024" alt="Project Aegis_ file monitoring flowchart" src="https://github.com/user-attachments/assets/9068443b-5e7c-49ff-b5b6-0feb52a0eabb" />
-<img width="1536" height="1024" alt="Project Aegis_ file monitoring flowchart" src="https://github.com/user-attachments/assets/1e36eb38-b177-4a3e-9ef5-df56e2ac5ff4" />
+![SNS]()
