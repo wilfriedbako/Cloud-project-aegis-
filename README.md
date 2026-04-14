@@ -127,14 +127,14 @@ This policy allows Lambda to:
 ## 📸 Screenshots
 
 ### S3 Upload Trigger
-![S3](screenshot/ss3-upload.png)
+![S3](screenshots/ss3-upload.png)
 
 ### DynamoDB Records
 ![DynamoDB](screenshots/dynamodb.png)
 
 ### CloudWatch Logs
-![Logs](Screenshot/watchlogs1.png)
-![Logs](Screenshot/watchlogs.png)
+![Logs](Screenshots/watchlogs1.png)
+![Logs](Screenshots/watchlogs.png)
 
 ### SNS Alert Email
 ![SNS](screenshots/snsalert.png)
