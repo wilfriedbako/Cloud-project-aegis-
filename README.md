@@ -12,7 +12,7 @@ This project simulates high stakes environments such as legal, medical, and fore
 
 ##  Architecture
 
-![Diagram](screenshotsarchitecture-diagram.png)
+![Diagram](screenshots/architecture-diagram.png)
 
 ---
 ##  Architecture Highlights
