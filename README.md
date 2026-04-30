@@ -339,8 +339,7 @@ terraform init
 ---
 
 ###  Screenshot — Terraform Init
-
-
+![init](screenshots/screenshotsSNSSUBSCRIPTION.png)
 ---
 
 ### Step 4 — Preview changes
