@@ -356,7 +356,7 @@ terraform plan
 
 ---
 
-### Step 5 — Package Lambda
+### Step 5 — Package Lambda ( unzip the 
 
 Go back to project root and run:
 
@@ -377,7 +377,7 @@ Type: yes
 
 ---
 
-###  Screenshot — Terraform Apply
+###  Screenshot — Terraform Apply and terreform execution
 
 ![apply](screenshots/screenshotsTERRA-APPLY.png)
 ![execution](screenshots/screenshotsTERRA-EXECUTION.png)
