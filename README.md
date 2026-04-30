@@ -311,7 +311,7 @@ project-aegis/
 
 ---
 
-## ⚙️ Deployment Steps (Terraform)
+##  Deployment Steps (Terraform)
 
 ### Step 1 — Configure AWS CLI
 
@@ -356,11 +356,13 @@ terraform plan
 
 ---
 
-### Step 5 — Package Lambda ( unzip the 
+### Step 5 — Package Lambda (ZIP the function)
 
-Go back to project root and run:
+Go back to the project root and run:
 
 powershell Compress-Archive -Path lambda_function.py -DestinationPath lambda.zip -Force
+
+This step packages the Lambda function code into a ZIP file required for deployment with Terraform.
 
 ---
 
@@ -377,7 +379,7 @@ Type: yes
 
 ---
 
-###  Screenshot — Terraform Apply and terreform execution
+###  Screenshot — Terraform Apply and terraform execution 
 
 ![apply](screenshots/screenshotsTERRA-APPLY.png)
 ![execution](screenshots/screenshotsTERRA-EXECUTION.png)
@@ -484,25 +486,27 @@ Terraform allows this entire system to be recreated quickly, ensuring consistenc
 
 ##  What I Learned
 
-- How to design event-driven serverless architectures using AWS  
-- Implementing file integrity checks using SHA-256 hashing  
-- Integrating multiple AWS services (S3, Lambda, DynamoDB, SNS)  
-- Debugging real world cloud issues using CloudWatch logs  
-- Managing IAM roles and permissions securely (least privilege)  
-- Handling edge cases like duplicate files and overwrite behavior  
-- Building production like systems with monitoring and alerting  
+- Designed and implemented an event-driven, serverless architecture for real time file integrity monitoring  
+- Applied cryptographic hashing (SHA-256) to enforce data integrity and support chain of custody requirements  
+- Orchestrated AWS services (S3, Lambda, DynamoDB, SNS) into a cohesive, production grade workflow  
+- Implemented Infrastructure as Code using Terraform for reproducibility, scalability, and environment consistency  
+- Applied secure access patterns using AWS CLI, including aws configure and AWS SSO for authenticated access to cloud resources  
+- Enforced least-privilege IAM policies to secure service interactions across the system  
+- Built an immutable storage strategy using S3 versioning and retention concepts  
+- Leveraged CloudWatch for observability, debugging, and operational monitoring  
 
 ##  Future Improvements
 
-- Add API Gateway for secure file upload interface  
-- Implement user authentication using Amazon Cognito  
-- Store audit logs in S3 for long-term archival  
-- Build a monitoring dashboard using Grafana or QuickSight  
-- Add support for multi region replication for disaster recovery  
-- Implement automated infrastructure deployment using Terraform  
-- Add checksum comparison for large files using streaming  
-
-## 👤 Author
+- Design and implement CI/CD pipelines (GitHub Actions or Jenkins) to automate Terraform deployments across environments  
+- Introduce environment separation (dev, staging, prod) with modular Terraform architecture  
+- Integrate API Gateway and authentication (Cognito) to expose secure ingestion endpoints  
+- Enhance observability with centralized logging, metrics, and alerting dashboards (Grafana / CloudWatch Insights)  
+- Implement cross region replication and failover strategies for high availability and disaster recovery  
+- Optimize Lambda execution for large file processing using streaming and memory tuning  
+- Introduce policy as code and automated security validation within deployment pipelines  
+- Extend audit capabilities with long-term archival and compliance focused storage strategies
+  
+## Author
 
 **Wilfried Bako**
 
