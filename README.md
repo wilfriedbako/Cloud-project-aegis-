@@ -339,7 +339,9 @@ terraform init
 ---
 
 ###  Screenshot — Terraform Init
-![init](screenshots/screenshotsSNSSUBSCRIPTION.png)
+
+![init](screenshots/screenshotsTERRA-INIT.png)
+
 ---
 
 ### Step 4 — Preview changes
@@ -350,7 +352,7 @@ terraform plan
 
 ###  Screenshot — Terraform Plan
 
-(Add screenshot here)
+![plan](screenshots/screenshotsTERRA-PLAN.png)
 
 ---
 
@@ -362,7 +364,8 @@ powershell Compress-Archive -Path lambda_function.py -DestinationPath lambda.zip
 
 ---
 
-### 📸 Screenshot — Lambda ZIP (optional)
+![ZIP](screenshots/screenshotsLAMBDAZIP.png)
+
 
 ---
 
@@ -376,7 +379,9 @@ Type: yes
 
 ###  Screenshot — Terraform Apply
 
-(Add screenshot here)
+![apply](screenshots/screenshotsTERRA-APPLY.png)
+![execution](screenshots/screenshotsTERRA-EXECUTION.png)
+
 
 ---
 
@@ -386,7 +391,7 @@ Check your email and confirm subscription.
 
 ---
 
-###  Screenshot — SNS Confirmation Email
+![confirmation](screenshots/screenshotsSNSSUBSCRIPTION.png)
 
 ---
 
@@ -405,7 +410,7 @@ Expected:
 
 ---
 
-###  Screenshot — SNS Alert Email
+![alerts](screenshots/snsalert.png)
 
 ---
 
@@ -419,7 +424,7 @@ Manual:
 
 Terraform:
 
-* Code-based
+* Code based
 * Reproducible
 * Fast deployment
 
