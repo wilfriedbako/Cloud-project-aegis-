@@ -4,6 +4,7 @@
 
 Project Aegis is a cloud native file integrity monitoring system designed to ensure authenticity, traceability, and security of uploaded files.
 It automatically generates a SHA-256 fingerprint for every file stored in Amazon S3 and maintains a tamper proof audit trail in DynamoDB. If a file is modified while keeping the same name, the system detects the change and triggers a real time alert using Amazon SNS.
+This project was first built manually using the AWS Console and later automated using Terraform to demonstrate Infrastructure as Code practices.
 
 This project simulates high stakes environments such as legal, medical, and forensic systems where data integrity is critical.
 
@@ -140,7 +141,7 @@ This policy allows Lambda to:
 ![SNS](screenshots/snsalert.png)
 
 
-##  How to Run This Project (Step-by-Step)
+##  How to Run This Project (Manual Setup )
 
 ###  Create S3 Bucket
 
@@ -281,7 +282,154 @@ Result:
 - Confirm:
   - File processed  
   - Hash generated  
-  - SNS triggered  
+  - SNS triggered
+ 
+ ---
+
+  ##  Infrastructure as Code (Terraform)
+
+This project was initially built using the AWS Console and later fully automated using Terraform to demonstrate Infrastructure as Code (IaC) best practices.
+
+The Terraform configuration provisions the entire system automatically, including:
+
+* S3 bucket with Object Lock and versioning (immutable storage)
+* DynamoDB table with partition and sort key for audit history
+* SNS topic with email subscription for alerts
+* Lambda function deployment (via ZIP packaging)
+* IAM roles and policies with least privilege
+* S3 event trigger to invoke Lambda automatically
+
+---
+
+##  Terraform Structure
+
+project-aegis/
+├── terraform/
+│   └── main.tf
+├── lambda/
+│   └── lambda_function.py
+
+---
+
+## ⚙️ Deployment Steps (Terraform)
+
+### Step 1 — Configure AWS CLI
+
+Run:
+aws configure
+
+Enter:
+
+* Access key
+* Secret key
+* Region (e.g. us-east-1)
+
+---
+
+### Step 2 — Go to Terraform folder
+
+cd terraform
+
+---
+
+### Step 3 — Initialize Terraform
+
+terraform init
+
+---
+
+###  Screenshot — Terraform Init
+
+
+---
+
+### Step 4 — Preview changes
+
+terraform plan
+
+---
+
+###  Screenshot — Terraform Plan
+
+(Add screenshot here)
+
+---
+
+### Step 5 — Package Lambda
+
+Go back to project root and run:
+
+powershell Compress-Archive -Path lambda_function.py -DestinationPath lambda.zip -Force
+
+---
+
+### 📸 Screenshot — Lambda ZIP (optional)
+
+---
+
+### Step 6 — Deploy infrastructure
+
+terraform apply
+
+Type: yes
+
+---
+
+###  Screenshot — Terraform Apply
+
+(Add screenshot here)
+
+---
+
+### Step 7 — Confirm SNS email
+
+Check your email and confirm subscription.
+
+---
+
+###  Screenshot — SNS Confirmation Email
+
+---
+
+### Step 8 — Test system
+
+Upload file:
+test.txt → hello
+
+Upload modified file:
+test.txt → HELLO WORLD
+
+Expected:
+
+* No alert first time
+* Alert when content changes
+
+---
+
+###  Screenshot — SNS Alert Email
+
+---
+
+##  Manual vs Terraform
+
+Manual:
+
+* Click-based
+* Hard to repeat
+* Slower
+
+Terraform:
+
+* Code-based
+* Reproducible
+* Fast deployment
+
+---
+
+##  Key Insight
+
+Terraform allows this entire system to be recreated quickly, ensuring consistency and scalability across environments.
+
 
 ---
 
